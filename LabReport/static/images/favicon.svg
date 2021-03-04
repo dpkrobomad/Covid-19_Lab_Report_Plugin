@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="master-artboard" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="512px" height="512px" enable-background="new 0 0 2800 1800"><rect id="ee-background" x="0" y="0" width="512" height="512" style="fill: white; fill-opacity: 0; pointer-events: none;"/>
+
+<g transform="matrix(0.5128445029258728, 0, 0, 0.5128445029258728, -929.1438130522529, -209.12758282815406)">
+		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="1950.1742" y1="900" x2="2672.4963" y2="900">
+			<stop offset="0" style="stop-color:#00FBFF"/>
+			<stop offset="1" style="stop-color:#030059"/>
+		</linearGradient>
+		<path fill="url(#SVGID_2_)" d="M2311.3,538.8L2311.3,538.8l-360.8,0l-0.2,45.1c0,124.7,101.1,225.7,225.7,225.7l135.3,0&#10;&#9;&#9;&#9;c0.8,0,1.6,0,2.3,0c48.8,1.2,87.9,41.2,87.9,90.3c0,49.9-40.4,90.3-90.3,90.3l-270.9,0c-49.9,0-90.3,40.4-90.3,90.3l0.3,180.6&#10;&#9;&#9;&#9;h360.8h0c199.5,0,361.2-161.7,361.2-361.2S2510.8,538.8,2311.3,538.8z"/>
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="2085.7686" y1="900" x2="2356.4819" y2="900">
+			<stop offset="0" style="stop-color:#00FBFF"/>
+			<stop offset="1" style="stop-color:#030059"/>
+		</linearGradient>
+		<path fill="url(#SVGID_3_)" d="M2311.3,855L2311.3,855h-180.4c-24.9,0-45.1,20.1-45.1,45c0,24.9,20.2,45,45.1,45h180.4h0&#10;&#9;&#9;&#9;c24.9,0,45.1-20.1,45.1-45C2356.5,875.1,2336.3,855,2311.3,855z"/>
+		<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="1950.1742" y1="945.1601" x2="2446.772" y2="945.1601">
+			<stop offset="0" style="stop-color:#00FBFF"/>
+			<stop offset="1" style="stop-color:#030059"/>
+		</linearGradient>
+		<path fill="url(#SVGID_4_)" d="M2313.7,809.7c48.8,1.2,87.9,41.2,87.9,90.3c0,49.9-40.4,90.3-90.3,90.3l-270.9,0&#10;&#9;&#9;&#9;c-49.9,0-90.3,40.4-90.3,90.3l0.3,0h360.8c74.8,0,135.4-60.6,135.4-135.4C2446.8,871.1,2387.4,811,2313.7,809.7z"/>
+		<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="1950.1742" y1="1035.4354" x2="2536.7446" y2="1035.4354">
+			<stop offset="0" style="stop-color:#00FBFF"/>
+			<stop offset="1" style="stop-color:#030059"/>
+		</linearGradient>
+		<path fill="url(#SVGID_5_)" d="M2536.7,1035.4c0-124.7-101.1-225.7-225.7-225.7c0.8,0,1.6,0,2.3,0&#10;&#9;&#9;&#9;c73.7,1.2,133.1,61.4,133.1,135.4c0,74.8-60.6,135.4-135.4,135.4h-360.8v180.6H2311C2435.7,1261.2,2536.7,1160.1,2536.7,1035.4z"/>
+	</g>
+</svg>

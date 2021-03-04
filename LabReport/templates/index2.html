@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" >
+  {% load static %}
+<head>
+  <meta charset="UTF-8">
+  <title>Lab Report | By Deepak Radhakrishnan</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+<link rel="shortcut icon" href="{% static 'images/favicon.svg' %}">
+</head>
+<body>
+  <ul>
+    <li style="float:right"><a class="active" href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+  </ul>
+  <!-- <a  href="{% url 'logout' %}" class="btn btn-info btn-lg">
+    <span class="glyphicon glyphicon-log-out"></span> Log out
+  </a> -->
+ <!-- <a id="logoutb" href="{% url 'logout' %}">Logout</a> -->
+  <h1>Covid 19 RT-PCR Lab Test Report Portal</h1>
+  <button id="addreport" type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModal">
+    Add new Report
+  </button>
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content clrp">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Upload new Report</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body clrp">
+          <form action="{% url 'upload' %}" method="post" enctype= multipart/form-data>
+            {% csrf_token %}
+            {{ form }}
+            <div class="form-group row">
+              <label for="Name" class="col-sm-3 col-form-label modlabel ">Name:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="Name" id="Name">
+                {{ form.id_Name.errors }}
+              </div>
+              
+            </div>
+            <div class="form-group row">
+              <label for="Phone" class="col-sm-3 col-form-label modlabel">Phone:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="Phone" id="Phone">
+                {{ form.id_Phone.errors }}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="Lab_Number" class="col-sm-3 col-form-label modlabel">Lab Number:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="Lab_Number" id="Lab_Number">
+                {{ form.id_Lab_Number.errors }}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label modlabel" for="report">Upload Report</label>
+              <div class="col-sm-9">
+                <input type="file" class="form-control-file noborder"  id="report" name="report">
+                {{ form.id_report.errors }}
+              </div>
+            </div>
+            {{ form.errors }}
+            <button type="submit"  class="btn btn-secondary">Save</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </form>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+<!-- partial:index.partial.html -->
+<section>
+  <!--for demo wrap-->
+  
+
+  
+
+    <div class="tb_search">
+      <input type="text" id="search_input_all"  placeholder="Search.." class="form-control">
+    </div>
+
+
+
+
+    
+
+
+
+
+
+  <div class="tbl-header">
+    <table  cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Lab Number</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Report</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table id= "tabledata" cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        {% for report in reports %}
+        <tr>
+          <td>{{ report.Lab_Number }}</td>
+          <td>{{ report.Name  }}</td>
+          <td>{{ report.Phone  }}</td>
+          <td><a href="http://127.0.0.1:8000/report/{{  report.Lab_Number  }}" target="_blank">View Report</a></td>
+        </tr>
+        {% endfor %}
+      
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+
+<script>
+  $(document).ready(function(){
+    $("#search_input_all").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#tabledata tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  </script>
+
+<!-- follow me template -->
+<div class="made-with-love">
+  Made with
+  <i>♥</i> by
+  <a target="_blank" href="https://www.deepakradhakrishnan.in/">Deepak Radhakrishnan</a>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="{% static 'js/script2.js' %}"></script>
+
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+</body>
+</html>

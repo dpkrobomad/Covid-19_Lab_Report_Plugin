@@ -1,0 +1,40 @@
+h1{
+  text-shadow:2px 2px 2px black;
+}
+footer{
+  padding-top:50px;
+}
+input:not(.form-control){
+  border-radius:5px;
+  line-height:1.9em;
+  margin:20px 0 20px 0;
+  box-shadow:2px 2px 2px black;
+}
+
+i{
+  height:30px;
+}
+
+footer{
+  background:linear-gradient(45deg, blue, red);
+  color:white;
+  
+}
+.footer-footer{
+  background-color:black;
+  margin-top:100px;
+}
+.footer-footer > div{
+  padding-top:2em;
+}
+i{
+ margin-top:20px; color:rgba(100,200,200,.8);
+  text-shadow:2px 2px 2px black;
+}
+p{
+font-size:1.4em;
+  text-shadow:2px 2px 2px black;
+}
+button{
+  box-shadow:2px 2px 2px black;
+}
